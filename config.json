@@ -1,0 +1,8 @@
+{
+    "Signal Frequency": 1000,
+    "Noise Frequency": 25000,
+    "Number of Cycles": 10,
+    "Sampling Frequency": 1000000,
+    "Signal Type": "triangle",
+    "Signal Amplitude": 2
+}
