@@ -3,7 +3,7 @@ import signal_gen
 import circuit_components
 
 def main():
-    Vin, Time = signal_gen.generate_input_signal()
+    Vin, originalV, noiseV, Time, DictValues = signal_gen.generate_input_signal()
     Vamp = circuit_components.Non_Invert_OPamp(Vin)
     Vfilt = circuit_components.Low_PassFilter(Vamp)
 
