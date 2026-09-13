@@ -51,6 +51,8 @@ Visualization: Displays input, amplified, and filtered signals on a single Matpl
 
 ## Recent Improvements
 
+* Addition of High Pass Filter and Band Pass filter
+
 * Configuration File: Moved settings (frequencies, amplitude, wave type) to config.json instead of hardcoding them in Python scripts.
 
 * More Waveforms: Added support for square and triangle waves alongside sine waves.
@@ -60,8 +62,6 @@ Visualization: Displays input, amplified, and filtered signals on a single Matpl
 ---
 
 ## Planned Improvements
-
-* Add High Pass Filter
 
 * Add Bode plots
 
