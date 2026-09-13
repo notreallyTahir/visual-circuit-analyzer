@@ -61,6 +61,10 @@ Visualization: Displays input, amplified, and filtered signals on a single Matpl
 
 ## Planned Improvements
 
+* Add High Pass Filter
+
+* Add Bode plots
+
 * Add FFT / frequency spectrum plots alongside the time domain graphs.
 
 * Model realistic op-amp limitations like slew rate and gain-bandwidth limits.
