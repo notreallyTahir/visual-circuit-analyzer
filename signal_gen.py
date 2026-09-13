@@ -5,14 +5,15 @@ from scipy import signal
 
 # json file to save data
 with open('config.json', 'r') as file:
-    values = json.load(file)
+    data = json.load(file)
 
+values = data['signal_gen']
 
 def generate_input_signal(cfg=values):
     signal_freq = cfg['Signal Frequency']
     noise_freq = cfg['Noise Frequency']
     Cycles = cfg['Number of Cycles']
-    fs = cfg['Sampling Frequency']
+    fs = data['samples']
     wave = cfg['Signal Type']
     amp = cfg['Signal Amplitude']
 
@@ -46,4 +47,4 @@ def generate_input_signal(cfg=values):
     Vin = V_signal + V_Noise
 
         
-    return Vin, V_signal, V_Noise, Tarray, cfg
+    return Vin, V_signal, V_Noise, Tarray

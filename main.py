@@ -1,12 +1,22 @@
 import matplotlib.pyplot as plt
+import json
 import signal_gen
 import circuit_components
 
 def main():
-    Vin, originalV, noiseV, Time, DictValues = signal_gen.generate_input_signal()
+    with open("config.json", "r") as file:
+        data= json.load(file)
+    Vin, originalV, noiseV, Time = signal_gen.generate_input_signal()
     Vamp = circuit_components.Non_Invert_OPamp(Vin)
-    Vfilt = circuit_components.Low_PassFilter(Vamp)
-
+    try:
+        if data['signal_gen']["Filter"] == "lowpass":
+            Vfilt = circuit_components.Low_PassFilter(Vamp)
+        elif data['signal_gen']["Filter"] == "highpass":
+            Vfilt = circuit_components.High_PassFilter(Vamp)
+        elif data['signal_gen']["Filter"] == "highpass":
+            Vfilt = circuit_components.Band_PassFilter(Vamp)
+    except:
+        TypeError("Unknown Filter selection")
     
     plt.figure(figsize=(10, 7))
 
