@@ -63,6 +63,10 @@ Visualization: Displays input, amplified, and filtered signals on a single Matpl
 
 ## Planned Improvements
 
+* Make more realistic noise.
+
+* automate filtering
+
 * Add Bode plots
 
 * Add FFT / frequency spectrum plots alongside the time domain graphs.
