@@ -1,6 +1,6 @@
 # Visual Circuit Analyzer
 
-A simple Python project that simulates an analog circuit pipeline: it generates wave, amplifies it using an Op-Amp, clips the signal at supply limits, and cleans it up with a low-pass filter.
+A Python project that simulates an analog circuit pipeline: it generates a wave, adds a realistic noise to it,  amplifies it using an Op-Amp, clips the signal at supply limits, and cleans it up with a filter and then plots it.
 
 ---
 
@@ -8,9 +8,9 @@ A simple Python project that simulates an analog circuit pipeline: it generates 
 
 Multiple Waveforms: Generates sine, square, or triangle waves with customizable frequency, amplitude, and high-frequency noise.
 
-Op-Amp Simulation: Models non-inverting op-amp gain ($A_v = 1 + \frac{R_2}{R_1}$) with rail voltage saturation ($\pm V_{\text{sat}}$).
+Op-Amp Simulation: Models non-inverting op-amp gain and inverting op-amp gain with rail voltage saturation ($\pm V_{\text{sat}}$).
 
-Low-Pass Filtering: Uses a 2nd-order Butterworth low-pass filter with zero-phase filtering (sosfiltfilt) to avoid time delays.
+Includes Low pass, High pass, Bandpass Filters.
 
 Visualization: Displays input, amplified, and filtered signals on a single Matplotlib plot.
 
