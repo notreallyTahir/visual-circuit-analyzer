@@ -26,25 +26,26 @@ def generate_input_signal(cfg=values):
 
 
     # Voltage formula = V = A sin(wt), where w = 2pi * f
-    #noise amplitude 0.5
 
     if wave == 'sin':
         # Voltage formula = V = A sin(wt), where w = 2pi * f
         V_signal = amp * np.sin(phase) 
-        V_Noise = 0.5 * np.sin(2*np.pi*noise_freq*Tarray)
-
     elif wave == 'square':
         V_signal = amp*signal.square(phase)
-        V_Noise = 0.5 * np.sin(2*np.pi*noise_freq*Tarray)
 
     elif wave == 'triangle':
         V_signal = amp*signal.sawtooth(phase, width=0.5)
-        V_Noise = 0.5 * np.sin(2*np.pi*noise_freq*Tarray)
 
     else:
         raise ValueError(f'Unknown signal type {wave}')
 
-    Vin = V_signal + V_Noise
+    def Noise_adder (Noise_level= np.linspace(0, 2, samples), totalS= samples):
+        return np.random.normal(0, Noise_level, totalS)
+
+    Vin = V_signal + Noise_adder()
+
+
 
         
-    return Vin, V_signal, V_Noise, Tarray
+    return Vin, V_signal, Tarray
+git pull origin main --rebase
